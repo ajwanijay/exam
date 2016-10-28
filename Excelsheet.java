@@ -6,22 +6,22 @@ public class Excelsheet {
 
 	public int titleToNumber(String title) {
 		if (title == null || title.length() == 0) {
-			throw new IllegalArgumentException("Input is not valid!");
+			throw new IllegalArgumentException("Not valid!");
 		}
 
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 		char c = 'A';
 		for (int i = 1; i <= 26; i++) {
 			map.put(c, i);
-			c += 1;
+			c = c+ 1;
 		}
 
 		int result = 0;
 		int i = title.length() - 1;
 		int t = 0;
 		while (i >= 0) {
-			char curr = title.charAt(i);
-			result = result + (int) Math.pow(26, t) * map.get(curr);
+			char cr = title.charAt(i);
+			result = result + (int) Math.pow(26, t) * map.get(cr);
 			t++;
 			i--;
 		}
