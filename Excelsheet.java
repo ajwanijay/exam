@@ -13,9 +13,9 @@ public class Excelsheet {
 		char c = 'A';
 		for (int i = 1; i <= 26; i++) {
 			map.put(c, i);
-			c = c+ 1;
-		}
-
+			c = c+ 1;	// incompatible types: possible lossy conversion from int to char
+		}			// c =(char) ((char) c+ 1);
+					// -2;
 		int result = 0;
 		int i = title.length() - 1;
 		int t = 0;
